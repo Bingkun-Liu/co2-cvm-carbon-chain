@@ -35,16 +35,6 @@ input image / object description
 -> carbon-chain estimate for user-facing tools
 ```
 
-The recovered notes describe the project as a bridge between computer vision,
-production-chain reconstruction, and carbon-value prediction:
-
-![CO2-CV project summary](assets/figures/co2_cv_summary_preview.jpg)
-
-This later summary note frames the project as a deep-learning system for
-predicting an object's carbon chain. It mentions ImageNet, SSD, autoencoders,
-seq2seq, CVM reconstruction, carbon flow, and an eventual user-facing app for
-carbon-emission estimation.
-
 ## Visual Walkthrough
 
 ### 1. From Object Data to a Symbolic Production Chain
