@@ -35,6 +35,69 @@ input image / object description
 -> carbon-chain estimate for user-facing tools
 ```
 
+The recovered notes describe the project as a bridge between computer vision,
+production-chain reconstruction, and carbon-value prediction:
+
+![CO2-CV project summary](assets/figures/co2_cv_summary_preview.jpg)
+
+This later summary note frames the project as a deep-learning system for
+predicting an object's carbon chain. It mentions ImageNet, SSD, autoencoders,
+seq2seq, CVM reconstruction, carbon flow, and an eventual user-facing app for
+carbon-emission estimation.
+
+## Visual Walkthrough
+
+### 1. From Object Data to a Symbolic Production Chain
+
+![Process steps from image data to symbolic sequence prediction](assets/figures/image1.png)
+
+The original design starts with image data about an object. The object passes
+through classification, detailed recognition, database lookup, conversion from
+object IDs to symbols, and finally symbol-sequence prediction. This is the
+high-level machine-learning pipeline behind the project.
+
+![Finite deterministic mapping between model domains](assets/figures/image7.png)
+
+The project also describes the conversion as a finite deterministic mapping
+between model domains. For example, a recognized object such as a water tank
+could become a database object ID, then a symbolic token, then part of a source
+sequence such as `a1 b2 b1 b4 a33 b78 end`.
+
+### 2. Rebuilding Production Networks
+
+![Yakult manufacturing process with graph overlay](assets/figures/image4.png)
+
+One example reconstructed a Yakult manufacturing process from a production
+diagram. Nodes represent materials, machines, tanks, pumps, filters, and
+intermediate production steps.
+
+![Yakult production network as graph components](assets/figures/image5.png)
+
+The same Yakult process was then represented as graph-like chains. This made it
+possible to describe the product as a structured production network rather than
+only as a label or image.
+
+![Blue jeans production network](assets/figures/image3.png)
+
+Another example modeled blue jeans, including denim, dye, zipper, buttons,
+pressing machines, sewing machines, cutting machines, and other supply-chain
+components.
+
+### 3. Training Data for Seq2Seq Prediction
+
+![Object symbols mapped to CO2 values](assets/figures/image6.png)
+
+The training representation followed a seq2seq pattern: source-side object or
+production-chain symbols were mapped to target-side CO2 values or carbon-flow
+symbols. This matches the recovered server-side dataset names:
+
+```text
+sources.txt
+targets.txt
+vocab.sources.txt
+vocab.targets.txt
+```
+
 ## Original Project Concepts
 
 - CO2 sequestration networks and vectors
