@@ -37,43 +37,33 @@ input image / object description
 
 ## Visual Walkthrough
 
-### 1. From Object Data to a Symbolic Production Chain
+### 1. System Structure
 
 ![Process steps from image data to symbolic sequence prediction](assets/figures/image1.png)
 
 The original design starts with image data about an object. The object passes
 through classification, detailed recognition, database lookup, conversion from
-object IDs to symbols, and finally symbol-sequence prediction. This is the
-high-level machine-learning pipeline behind the project.
+object IDs to symbols, and finally symbol-sequence prediction. This diagram is
+the clearest overview of the project structure.
 
-![Finite deterministic mapping between model domains](assets/figures/image7.png)
-
-The project also describes the conversion as a finite deterministic mapping
-between model domains. For example, a recognized object such as a water tank
-could become a database object ID, then a symbolic token, then part of a source
-sequence such as `a1 b2 b1 b4 a33 b78 end`.
-
-### 2. Rebuilding Production Networks
+### 2. Production-Chain Reconstruction
 
 ![Yakult manufacturing process with graph overlay](assets/figures/image4.png)
 
 One example reconstructed a Yakult manufacturing process from a production
 diagram. Nodes represent materials, machines, tanks, pumps, filters, and
-intermediate production steps.
+intermediate production steps. The goal was to turn a product diagram into a
+structured production network.
 
-![Yakult production network as graph components](assets/figures/image5.png)
+### 3. CVM / Carbon-Value Representation
 
-The same Yakult process was then represented as graph-like chains. This made it
-possible to describe the product as a structured production network rather than
-only as a label or image.
+![Circular CO2 accounting graph](assets/figures/image2.png)
 
-![Blue jeans production network](assets/figures/image3.png)
+The reconstructed production network could then be represented as a CVM /
+Circularity Accounting Model graph. In this representation, product inputs,
+process steps, and CO2 values become connected nodes in a carbon-chain model.
 
-Another example modeled blue jeans, including denim, dye, zipper, buttons,
-pressing machines, sewing machines, cutting machines, and other supply-chain
-components.
-
-### 3. Training Data for Seq2Seq Prediction
+### 4. Training Data for Seq2Seq Prediction
 
 ![Object symbols mapped to CO2 values](assets/figures/image6.png)
 
