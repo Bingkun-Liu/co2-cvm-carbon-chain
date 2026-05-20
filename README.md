@@ -1,69 +1,82 @@
-# CO2 CVM Carbon Chain Project
+# AI Carbon Chain Prediction with CVM
 
-This repository archives and reconstructs an undergraduate research project on
-predicting product-level carbon chains from object data.
+This repository archives and reconstructs an undergraduate AI research project
+on predicting product-level carbon chains from object data.
 
-The project explored how to connect computer vision, production-chain graphs,
-and sequence-to-sequence modeling to estimate carbon values for physical
-objects. The central idea was to represent an object's supply and disposal
-chain as a Circularity Accounting Model / CVM graph, encode that graph as
-symbol sequences, and train a model to map object or production-chain symbols
-to carbon-value sequences.
+The project explored how computer vision, graph-based production-chain
+modeling, and sequence-to-sequence learning could be combined to estimate
+carbon values for physical objects. The central AI idea was to turn a product's
+materials, components, machines, and manufacturing steps into a machine-readable
+symbol sequence, then train a model to map that source sequence to CO2 /
+carbon-value targets.
+
+## AI Focus
+
+This project framed carbon accounting as a representation-learning and
+sequence-prediction problem:
+
+- Computer vision identifies an object and its likely components.
+- A structured production-chain graph represents the object's life cycle.
+- Graph nodes are encoded into symbolic sequences.
+- A seq2seq model learns relationships between production-chain symbols and
+  carbon-value outputs.
+- The prediction can support an app or interface for carbon-emission estimation.
 
 ## Reconstructed Goal
 
-Given a product or object, the system aimed to:
+Given a product image or object description, the system aimed to:
 
-1. Identify the object and its components from image or metadata.
+1. Use image classification or object detection to identify the object.
 2. Reconstruct the object's production chain, including materials, machines,
    intermediate objects, and distribution steps.
-3. Encode the production chain as symbolic source sequences.
-4. Use a seq2seq model to predict target sequences representing carbon values
-   or carbon-flow information.
+3. Encode the production chain as symbolic source sequences suitable for ML.
+4. Use a seq2seq model to predict target sequences representing CO2 values or
+   carbon-flow information.
 5. Provide the resulting carbon-chain estimate to an application interface for
    carbon-emission estimation and decision support.
 
-## Pipeline
+## AI Pipeline
 
 ```text
 input image / object description
 -> image classification or object detection
--> component, material, and machine recognition
+-> component, material, and process recognition
 -> object IDs in a database / model card
--> symbolic production-chain representation
--> seq2seq model for CVM / carbon value prediction
--> carbon-chain estimate for user-facing tools
+-> symbolic graph / production-chain representation
+-> seq2seq model for CO2 / carbon-value prediction
+-> carbon-chain estimate for a user-facing tool
 ```
 
 ## Visual Walkthrough
 
-### 1. System Structure
+### 1. AI System Structure
 
 ![Process steps from image data to symbolic sequence prediction](assets/figures/image1.png)
 
-The original design starts with image data about an object. The object passes
-through classification, detailed recognition, database lookup, conversion from
-object IDs to symbols, and finally symbol-sequence prediction. This diagram is
-the clearest overview of the project structure.
+The system starts with image data about an object. The object passes through
+classification, detailed recognition, database lookup, conversion from object
+IDs to symbols, and finally symbol-sequence prediction. This diagram is the
+clearest overview of the proposed AI pipeline.
 
-### 2. Production-Chain Reconstruction
+### 2. Structured Data for the Model
 
 ![Yakult manufacturing process with graph overlay](assets/figures/image4.png)
 
 One example reconstructed a Yakult manufacturing process from a production
 diagram. Nodes represent materials, machines, tanks, pumps, filters, and
 intermediate production steps. The goal was to turn a product diagram into a
-structured production network.
+structured graph that a model could consume.
 
-### 3. CVM / Carbon-Value Representation
+### 3. Carbon-Value Graph Representation
 
 ![Circular CO2 accounting graph](assets/figures/image2.png)
 
 The reconstructed production network could then be represented as a CVM /
 Circularity Accounting Model graph. In this representation, product inputs,
 process steps, and CO2 values become connected nodes in a carbon-chain model.
+This provided the target domain for carbon-flow prediction.
 
-### 4. Training Data for Seq2Seq Prediction
+### 4. Seq2Seq Training Target
 
 ![Object symbols mapped to CO2 values](assets/figures/image6.png)
 
@@ -85,9 +98,11 @@ vocab.targets.txt
 - Consumption vectors
 - Supply-chain and disposal-chain encoding
 - Object IDs to symbols
-- Symbol sequence prediction
-- Source-to-target sequence mapping
+- Symbol-sequence prediction
+- Source-to-target sequence learning
 - Carbon-flow and carbon-value estimation
+- Computer vision for object and component recognition
+- Seq2seq modeling for carbon-chain prediction
 
 ## Examples in the Notes
 
